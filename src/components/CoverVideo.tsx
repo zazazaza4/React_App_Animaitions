@@ -1,3 +1,5 @@
+import { motion, Variants } from "framer-motion";
+import { FC } from "react";
 import styled from "styled-components";
 
 import MainVideo from "../assets/Walking Girl.mp4";
@@ -25,7 +27,7 @@ const DarkOverlay = styled.div`
   background-color: ${({ theme }) => `rgba(${theme.bodyRgba}, 0.6)`};
 `;
 
-const Title = styled.div`
+const Title = styled(motion.div)`
   position: absolute;
   top: 0;
   bottom: 0;
@@ -59,28 +61,76 @@ const Title = styled.div`
   }
 `;
 
-export const CoverVideo = () => {
+const containerVariants: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+
+    transition: {
+      delayChildren: 1.5,
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+  },
+};
+
+export const CoverVideo: FC = () => {
   return (
     <VideoContainer>
       <DarkOverlay />
-      <Title>
+      <Title variants={containerVariants} initial="hidden" animate="visible">
         <div>
-          <h1 data-scroll data-scroll-delay="0.13" data-scroll-speed="4">
+          <motion.h1
+            variants={itemVariants}
+            data-scroll
+            data-scroll-delay="0.13"
+            data-scroll-speed="4"
+          >
             W
-          </h1>
-          <h1 data-scroll data-scroll-delay="0.09" data-scroll-speed="4">
+          </motion.h1>
+          <motion.h1
+            variants={itemVariants}
+            data-scroll
+            data-scroll-delay="0.09"
+            data-scroll-speed="4"
+          >
             i
-          </h1>
-          <h1 data-scroll data-scroll-delay="0.06" data-scroll-speed="4">
+          </motion.h1>
+          <motion.h1
+            variants={itemVariants}
+            data-scroll
+            data-scroll-delay="0.06"
+            data-scroll-speed="4"
+          >
             b
-          </h1>
-          <h1 data-scroll data-scroll-delay="0.04" data-scroll-speed="4">
+          </motion.h1>
+          <motion.h1
+            variants={itemVariants}
+            data-scroll
+            data-scroll-delay="0.04"
+            data-scroll-speed="4"
+          >
             e
-          </h1>
+          </motion.h1>
         </div>
-        <h2 data-scroll data-scroll-delay="0.04" data-scroll-speed="2">
+        <motion.h2
+          variants={itemVariants}
+          data-scroll
+          data-scroll-delay="0.04"
+          data-scroll-speed="2"
+        >
           Inspire. Create. Belive
-        </h2>
+        </motion.h2>
       </Title>
       <video src={MainVideo} autoPlay muted loop />
     </VideoContainer>

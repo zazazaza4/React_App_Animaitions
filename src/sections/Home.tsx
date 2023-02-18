@@ -1,16 +1,20 @@
+import { FC } from "react";
 import styled from "styled-components";
-import { CoverVideo } from "../components";
+
+import { CoverVideo, Logo, NavBar } from "../components";
 
 const Section = styled.section`
   position: relative;
-  min-height: 200vh;
+  min-height: 100vh;
   overflow: hidden;
 `;
 
-export const Home = () => {
+export const Home: FC = () => {
   return (
     <Section>
       <CoverVideo />
+      <Logo />
+      <NavBar />
     </Section>
   );
 };
