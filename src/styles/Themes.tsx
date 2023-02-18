@@ -9,7 +9,7 @@ export const dark = {
   fontxs: "0.75em",
   fontsm: "0.875em",
   fontmd: "1em",
-  fontls: "1.25em",
+  fontlg: "1.25em",
   fontxl: "2em",
   fontxxl: "3em",
   fontxxxl: "5em",
@@ -17,3 +17,5 @@ export const dark = {
 
   navHeight: "5rem",
 };
+
+export type darkThemeType = typeof dark;
