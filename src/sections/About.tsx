@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styled from "styled-components";
 
-import aboutImgs, { speedImgs } from "../assets/images/about";
+import { aboutImgs, speedImgs } from "../assets/images/about";
 
 const Section = styled.section`
   position: relative;
@@ -30,7 +30,6 @@ const Left = styled.div`
   position: relative;
   z-index: 3;
   margin-top: 20%;
-  padding-bottom: 20%;
 `;
 
 const Right = styled.div`
