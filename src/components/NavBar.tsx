@@ -5,12 +5,12 @@ import styled from "styled-components";
 
 import data from "../data.json";
 
-const NavContainer = styled(motion.div)<{ isOpen: boolean }>`
+const NavContainer = styled(motion.div)<{ open: boolean }>`
   width: 100vw;
   z-index: 3;
 
   position: absolute;
-  top: ${({ isOpen, theme }) => (isOpen ? "0" : `-${theme.navHeight}`)};
+  top: ${({ open, theme }) => (open ? "0" : `-${theme.navHeight}`)};
 
   display: flex;
   justify-content: center;
@@ -88,7 +88,7 @@ export const NavBar: FC = () => {
 
   return (
     <NavContainer
-      isOpen={isOpen}
+      open={isOpen}
       initial={{ y: "-100" }}
       animate={{ y: 0 }}
       transition={{ duration: 2, delay: 1.6 }}
