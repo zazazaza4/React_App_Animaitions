@@ -2,6 +2,8 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { FC, useLayoutEffect, useRef } from "react";
 import styled from "styled-components";
+import { productArray } from "../assets/images/shop";
+import { Product } from "../components";
 
 const Section = styled.section`
   width: 100%;
@@ -66,7 +68,6 @@ const Right = styled.div`
   align-items: center;
 
   div {
-    width: 5rem;
     margin: 0 2rem;
   }
 `;
@@ -81,45 +82,43 @@ export const Shop: FC = () => {
     let element = ref.current;
     let scrollingElement = horizontalRef.current;
 
-    let pinWrapWidth: number = scrollingElement?.offsetWidth!;
-
     let t1 = gsap.timeline();
 
-    setTimeout(() => {
-      t1.to(element, {
-        scrollTrigger: {
-          trigger: element,
-          start: "top top",
-          end: pinWrapWidth,
-          scroller: ".App",
-          scrub: true,
-          pin: true,
-          markers: true,
-        },
-        height: `${scrollingElement?.scrollWidth}px`,
-        ease: "none",
-      });
+    if (scrollingElement) {
+      let pinWrapWidth: number = scrollingElement?.offsetWidth;
 
-      t1.to(scrollingElement, {
-        scrollTrigger: {
-          trigger: scrollingElement,
-          start: "top top",
-          end: `${pinWrapWidth} bottom`,
-          scroller: ".App",
-          scrub: 1,
-          markers: true,
-        },
-        x: -pinWrapWidth,
-        ease: "none",
-      });
+      setTimeout(() => {
+        t1.to(element, {
+          scrollTrigger: {
+            trigger: element,
+            start: "top top",
+            end: pinWrapWidth + window.innerWidth * 0.65,
+            scroller: ".App",
+            scrub: true,
+            pin: true,
+          },
+          height: `${scrollingElement?.scrollWidth!}px`,
+          ease: "none",
+        });
 
+        t1.to(scrollingElement, {
+          scrollTrigger: {
+            trigger: scrollingElement,
+            start: "top top",
+            end: `${pinWrapWidth} bottom`,
+            scroller: ".App",
+            scrub: 1,
+          },
+          x: -pinWrapWidth,
+          ease: "none",
+        });
+
+        ScrollTrigger.refresh();
+      }, 1000);
       ScrollTrigger.refresh();
-    }, 1000);
-    ScrollTrigger.refresh();
-
+    }
     return () => {
       t1.kill();
-      // ScrollTrigger.kill();
     };
   }, []);
 
@@ -144,18 +143,9 @@ export const Shop: FC = () => {
         </p>
       </Left>
       <Right data-scroll ref={horizontalRef}>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
-        <div>img</div>
+        {productArray.map(({ img, title }) => (
+          <Product key={img} img={img} title={title} />
+        ))}
       </Right>
     </Section>
   );
