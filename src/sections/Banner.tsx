@@ -29,6 +29,8 @@ const BannerComponent = styled.h2`
   text-transform: uppercase;
   line-height: 1;
 
+  z-index: 5;
+
   span {
     display: block;
     background-color: ${({ theme }) => theme.body};
