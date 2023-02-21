@@ -3,22 +3,61 @@
         {
             "id": "001",
             "name": "Home",
-            "route": "/"
+            "route": "home"
         },
         {
             "id": "002",
-            "name": "Project",
-            "route": "/project"
+            "name": "Shop",
+            "route": "shop"
         },
         {
             "id": "003",
             "name": "About",
-            "route": "/about"
+            "route": "about"
         },
         {
             "id": "004",
             "name": "Contact Us",
-            "route": "/contact-us"
+            "route": "footer"
+        }
+    ],
+    "footerItems": [
+        {
+            "id": "001",
+            "name": "Home",
+            "route": "home",
+            "blank": false
+            
+        },
+        {
+            "id": "002",
+            "name": "About",
+            "route": "about",
+            "blank": false
+        },
+        {
+            "id": "003",
+            "name": "Shop",
+            "route": "shop",
+            "blank": false
+        },
+        {
+            "id": "004",
+            "name": "New arrival",
+            "route": "new-arrival",
+            "blank": false
+        },
+        {
+            "id": "005",
+            "name": "Look book",
+            "route": "https://google.com",
+            "blank": true
+        },
+        {
+            "id": "006",
+            "name": "Reviews",
+            "route": "https://google.com",
+            "blank": true
         }
     ]
 }
