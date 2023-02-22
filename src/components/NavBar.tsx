@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 import data from "../data.json";
+import { useLocomotiveScroll } from "react-locomotive-scroll";
 
 const NavContainer = styled(motion.div)<{ open: boolean }>`
   width: 100vw;
@@ -85,13 +86,24 @@ const MenuBtn = styled.li`
 
 export const NavBar: FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const { scroll } = useLocomotiveScroll();
+
+  const handleScroll = (id: string) => {
+    let elem = document.getElementById(id);
+
+    scroll.scrollTo(elem, {
+      offset: "-100",
+      duration: "2000",
+      easing: [0.25, 0.0, 0.35, 1.0],
+    });
+  };
 
   return (
     <NavContainer
       open={isOpen}
       initial={{ y: "-100" }}
       animate={{ y: 0 }}
-      transition={{ duration: 2, delay: 1.6 }}
+      transition={{ duration: 4, delay: 4.6 }}
     >
       <MenuItems
         drag="y"
@@ -101,11 +113,12 @@ export const NavBar: FC = () => {
       >
         {data.menu.map(({ id, name, route }) => (
           <MenuItem
+            onClick={() => handleScroll(route)}
             whileHover={{ scale: 1.1, y: -5 }}
             whileTap={{ scale: 0.9, y: 0 }}
             key={id}
           >
-            <Link to={route}>{name}</Link>
+            <Link to={`/#${route}`}>{name}</Link>
           </MenuItem>
         ))}
         <MenuBtn onClick={() => setIsOpen((prev) => !prev)}>Menu</MenuBtn>
