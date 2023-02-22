@@ -11,7 +11,7 @@ const Section = styled.section`
 
 export const Home: FC = () => {
   return (
-    <Section>
+    <Section id="home">
       <CoverVideo />
       <Logo />
       <NavBar />
