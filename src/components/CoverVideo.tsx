@@ -69,7 +69,7 @@ const containerVariants: Variants = {
     opacity: 1,
 
     transition: {
-      delayChildren: 1.5,
+      delayChildren: 4.5,
       staggerChildren: 0.3,
     },
   },
