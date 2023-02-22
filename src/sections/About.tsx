@@ -58,7 +58,7 @@ const Right = styled.div`
 
 export const About: FC = () => {
   return (
-    <Section id="fixed-target">
+    <Section id="about">
       <Title
         data-scroll
         data-scroll-direction="horizontal"
@@ -66,7 +66,7 @@ export const About: FC = () => {
       >
         About Us
       </Title>
-      <Left data-scroll data-scroll-target="#fixed-target" data-scroll-sticky>
+      <Left data-scroll data-scroll-target="#about" data-scroll-sticky>
         We're fashion studio based in california. We create unique designs that
         will blow your mind. We also design unique jewellary pieces. Fashion is
         an ART that can not be grasped by everyone.
