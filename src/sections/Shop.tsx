@@ -123,7 +123,7 @@ export const Shop: FC = () => {
   }, []);
 
   return (
-    <Section ref={ref}>
+    <Section id="shop" ref={ref}>
       <Title data-scroll data-scroll-speed="-1">
         New Collection
       </Title>
@@ -144,7 +144,7 @@ export const Shop: FC = () => {
       </Left>
       <Right data-scroll ref={horizontalRef}>
         {productArray.map(({ img, title }) => (
-          <Product key={img} img={img} title={title} />
+          <Product key={img} img={img} title={title} pointer="pointer" />
         ))}
       </Right>
     </Section>
