@@ -76,6 +76,7 @@ const pathVariants: Variants = {
 
     transition: {
       duration: 2,
+      delay: 3,
       ease: "easeInOut",
     },
   },
