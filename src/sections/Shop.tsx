@@ -31,6 +31,14 @@ const Title = styled.h2`
   top: 1rem;
   left: 5%;
   z-index: 4;
+
+  @media (max-width: 64em) {
+    font-size: ${({ theme }) => theme.fontxxl};
+  }
+
+  @media (max-width: 48em) {
+    font-size: ${({ theme }) => theme.fontxl};
+  }
 `;
 
 const Left = styled.div`
@@ -53,6 +61,24 @@ const Left = styled.div`
     width: 80%;
     margin: 0 auto;
     padding-top: 20%;
+  }
+
+  @media (max-width: 64em) {
+    p {
+      font-size: ${({ theme }) => theme.fontmd};
+    }
+  }
+
+  @media (max-width: 48em) {
+    p {
+      font-size: ${({ theme }) => theme.fontsm};
+    }
+  }
+
+  @media (max-width: 30em) {
+    p {
+      font-size: ${({ theme }) => theme.fontxs};
+    }
   }
 `;
 
