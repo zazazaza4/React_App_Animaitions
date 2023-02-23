@@ -19,6 +19,10 @@ const NavContainer = styled(motion.div)<{ open: boolean }>`
 
   transition: top 0.3s ease;
   user-select: none;
+
+  @media (max-width: 40em) {
+    top: ${({ open }) => (open ? "0" : `calc(-50vh-4rem)`)};
+  }
 `;
 
 const MenuItems = styled(motion.ul)`
@@ -34,6 +38,12 @@ const MenuItems = styled(motion.ul)`
 
   width: 100%;
   padding: 0 10rem;
+
+  @media (max-width: 40em) {
+    flex-direction: column;
+    height: 50vh;
+    padding: 2rem 0;
+  }
 `;
 
 const MenuItem = styled(motion.li)`
@@ -56,6 +66,11 @@ const MenuItem = styled(motion.li)`
   &.active::after,
   &:hover::after {
     width: 100%;
+  }
+
+  @media (max-width: 40em) {
+    flex-direction: column;
+    padding: 0.5rem 0;
   }
 `;
 
@@ -82,6 +97,11 @@ const MenuBtn = styled.li`
   text-transform: uppercase;
 
   cursor: pointer;
+
+  @media (max-width: 40em) {
+    width: 10rem;
+    height: 2rem;
+  }
 `;
 
 export const NavBar: FC = () => {
