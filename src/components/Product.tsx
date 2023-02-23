@@ -29,6 +29,10 @@ const Item = styled(motion.div)<{
     text-align: center;
     cursor: ${({ pointer }) => pointer};
   }
+
+  @media (max-width: 30em) {
+    width: 15rem;
+  }
 `;
 
 interface IProductProps {
