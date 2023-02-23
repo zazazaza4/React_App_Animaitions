@@ -13,6 +13,14 @@ const VideoContainer = styled.section`
     height: 100vh;
     width: 100%;
     object-fit: cover;
+
+    @media (max-width: 48em) {
+      object-position: center 10%;
+    }
+
+    @media (max-width: 30em) {
+      object-position: center 50%;
+    }
   }
 `;
 
@@ -50,6 +58,10 @@ const Title = styled(motion.div)`
     font-family: "Kaushan Script";
     font-size: ${({ theme }) => theme.fontBig};
     text-shadow: 1px 1px 1px ${({ theme }) => theme.body};
+
+    @media (max-width: 30em) {
+      font-size: calc(5rem + 8vw);
+    }
   }
 
   h2 {
@@ -58,6 +70,11 @@ const Title = styled(motion.div)`
     text-shadow: 1px 1px 1px ${({ theme }) => theme.body};
     font-weight: 300;
     text-transform: capitalize;
+
+    @media (max-width: 30em) {
+      font-size: ${({ theme }) => theme.fontmd};
+      margin-top: 0.5rem;
+    }
   }
 `;
 
