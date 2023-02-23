@@ -30,6 +30,25 @@ const Overlay = styled.div`
 
   box-shadow: 0 0 0 5vw ${({ theme }) => theme.text};
   border: 3px solid ${({ theme }) => theme.body};
+
+  @media (max-width: 70em) {
+    width: 40vw;
+    height: 40vh;
+  }
+
+  @media (max-width: 64em) {
+    width: 50vw;
+    box-shadow: 0 0 0 60vw ${({ theme }) => theme.text};
+  }
+
+  @media (max-width: 48em) {
+    width: 60vw;
+  }
+
+  @media (max-width: 30em) {
+    width: 80vw;
+    height: 60vh;
+  }
 `;
 
 const Title = styled.h2`
@@ -44,6 +63,14 @@ const Title = styled.h2`
   top: 1rem;
   left: 5%;
   z-index: 4;
+
+  @media (max-width: 64em) {
+    font-size: ${({ theme }) => theme.fontxxl};
+  }
+
+  @media (max-width: 48em) {
+    font-size: ${({ theme }) => theme.fontxl};
+  }
 `;
 
 const Text = styled.div`
@@ -56,6 +83,10 @@ const Text = styled.div`
   right: 0;
 
   z-index: 4;
+
+  @media (max-width: 48em) {
+    display: none;
+  }
 `;
 
 const Container = styled.div`
@@ -70,6 +101,18 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+
+  @media (max-width: 64em) {
+    width: 30vw;
+  }
+
+  @media (max-width: 48em) {
+    width: 40vw;
+  }
+
+  @media (max-width: 30em) {
+    width: 60vw;
+  }
 `;
 
 export const NewArrival: FC = () => {
