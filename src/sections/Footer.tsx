@@ -36,13 +36,21 @@ const LogoContainer = styled.div`
   }
 
   h3 {
-    font-size: ${({ theme }) => theme.fontxl};
+    font-size: ${({ theme }) => theme.fontxxl};
     font-family: "Kaushan Script";
+
+    @media (max-width: 48em) {
+      font-size: ${({ theme }) => theme.fontxl};
+    }
   }
 `;
 
 const FooterContainer = styled(motion.footer)`
   width: 80vw;
+
+  @media (max-width: 48em) {
+    width: 90vw;
+  }
 
   ul {
     list-style-type: none;
@@ -54,6 +62,10 @@ const FooterContainer = styled(motion.footer)`
     margin-top: 4rem;
     border-top: 1px solid ${({ theme }) => theme.text};
     border-bottom: 1px solid ${({ theme }) => theme.text};
+
+    @media (max-width: 48em) {
+      justify-content: center;
+    }
   }
 
   li {
@@ -65,6 +77,11 @@ const FooterContainer = styled(motion.footer)`
 
     &:hover {
       transform: scale(1.1);
+    }
+
+    @media (max-width: 48em) {
+      padding: 1rem;
+      font-size: ${({ theme }) => theme.fontmd};
     }
   }
 `;
@@ -80,6 +97,21 @@ const Bottom = styled.div`
 
   a {
     text-decoration: underline;
+  }
+
+  @media (max-width: 64em) {
+    width: 100%;
+    margin: 0;
+    flex-direction: column;
+    justify-content: center;
+
+    span {
+      transform: none !important;
+    }
+  }
+
+  @media (max-width: 48em) {
+    font-size: ${({ theme }) => theme.fontmd};
   }
 `;
 
