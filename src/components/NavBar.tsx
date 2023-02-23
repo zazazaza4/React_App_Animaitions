@@ -21,7 +21,7 @@ const NavContainer = styled(motion.div)<{ open: boolean }>`
   user-select: none;
 
   @media (max-width: 40em) {
-    top: ${({ open }) => (open ? "0" : `calc(-50vh-4rem)`)};
+    top: ${({ open }) => (open ? "0" : `calc(-50vh - 4rem)`)};
   }
 `;
 
