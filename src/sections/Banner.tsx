@@ -11,6 +11,10 @@ const Section = styled.section`
   margin: 0 auto;
 
   position: relative;
+
+  @media (max-width: 48em) {
+    width: 90vw;
+  }
 `;
 
 const Container = styled.div`
@@ -19,6 +23,10 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+
+  @media (max-width: 48em) {
+    justify-content: center;
+  }
 `;
 
 const BannerComponent = styled.h2`
@@ -35,6 +43,23 @@ const BannerComponent = styled.h2`
     display: block;
     background-color: ${({ theme }) => theme.body};
     padding: 1rem 2rem;
+  }
+
+  @media (max-width: 70em) {
+    font-size: ${({ theme }) => theme.fontxxl};
+  }
+
+  @media (max-width: 64em) {
+    margin: 1rem 0;
+  }
+
+  @media (max-width: 48em) {
+    font-size: ${({ theme }) => theme.fontlg};
+    margin: 0.5rem 0;
+  }
+
+  @media (max-width: 30em) {
+    font-size: ${({ theme }) => theme.fontmd};
   }
 `;
 
